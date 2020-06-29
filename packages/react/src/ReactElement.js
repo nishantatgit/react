@@ -158,6 +158,8 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
     _owner: owner,
   };
 
+  console.log('inside react create element ', element);
+
   if (__DEV__) {
     // The validation flag is currently mutative. We put it on
     // an external backing store so that we can freeze the whole object.
@@ -195,7 +197,7 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
       Object.freeze(element);
     }
   }
-
+  console.log('returning element ...');
   return element;
 };
 

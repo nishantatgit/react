@@ -161,6 +161,7 @@ export function createInstance(
   hostContext: Object,
   internalInstanceHandle: Object,
 ): Instance {
+  console.log('fileName: ReactTestHostConfig.js');
   let propsToUse = props;
   if (enableDeprecatedFlareAPI) {
     if (props.DEPRECATED_flareListeners != null) {

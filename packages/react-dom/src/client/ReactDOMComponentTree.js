@@ -156,6 +156,7 @@ export function getClosestInstanceFromNode(targetNode: Node): null | Fiber {
  * instance, or null if the node was not rendered by this React.
  */
 export function getInstanceFromNode(node: Node): Fiber | null {
+  console.log('inside get instance from node ', node);
   const inst =
     (node: any)[internalInstanceKey] ||
     (node: any)[internalContainerInstanceKey];
@@ -166,6 +167,7 @@ export function getInstanceFromNode(node: Node): Fiber | null {
       inst.tag === SuspenseComponent ||
       inst.tag === HostRoot
     ) {
+      console.log('returning instance ', inst);
       return inst;
     } else {
       return null;
@@ -200,6 +202,7 @@ export function updateFiberProps(
   node: Instance | TextInstance | SuspenseInstance,
   props: Props,
 ): void {
+  console.log('updating fiber props');
   (node: any)[internalPropsKey] = props;
 }
 

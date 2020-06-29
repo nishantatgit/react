@@ -294,6 +294,9 @@ export function render(
     'Target container is not a DOM element.',
   );
   if (__DEV__) {
+    console.log('Yey! It Worked!!!!');
+    console.log('element ', element);
+    console.log('container ', container);
     const isModernRoot =
       isContainerMarkedAsRoot(container) &&
       container._reactRootContainer === undefined;
