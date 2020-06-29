@@ -202,6 +202,7 @@ export function updateFiberProps(
   node: Instance | TextInstance | SuspenseInstance,
   props: Props,
 ): void {
+  console.log('updating fiber props');
   (node: any)[internalPropsKey] = props;
 }
 

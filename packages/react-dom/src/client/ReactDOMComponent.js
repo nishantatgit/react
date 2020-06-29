@@ -395,6 +395,7 @@ function updateDOMProperties(
   wasCustomComponentTag: boolean,
   isCustomComponentTag: boolean,
 ): void {
+  console.log('updating dom properties ... ReactDOMComponent ', domElement);
   // TODO: Handle wasCustomComponentTag
   for (let i = 0; i < updatePayload.length; i += 2) {
     const propKey = updatePayload[i];
@@ -404,6 +405,7 @@ function updateDOMProperties(
     } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
       setInnerHTML(domElement, propValue);
     } else if (propKey === CHILDREN) {
+      console.log('props key is CHILDREN');
       setTextContent(domElement, propValue);
     } else {
       setValueForProperty(domElement, propKey, propValue, isCustomComponentTag);
